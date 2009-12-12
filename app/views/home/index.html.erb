@@ -5,8 +5,10 @@
 <ul>
 <%- if logged_in? -%>
   <li><%= link_to 'logout', { :controller => '/auth', :action => 'logout' }, :method => :post %></li>
+  <li><%= link_to 'settings', :controller => '/credentials' %></li>
 <%- else -%>
   <li><%= link_to 'login with OpenID', :controller => '/auth/open_id' %></li>
+  <li><%= link_to 'login with email', :controller => '/auth/email' %></li>
   <li><%= link_to 'signup', :controller => '/signup' %></li>
 <%- end -%>
 </ul>
